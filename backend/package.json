@@ -1,5 +1,5 @@
 {
-  "name": "framework-javascript-backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "API RESTful del master en framework para JS",
   "main": "index.js",
