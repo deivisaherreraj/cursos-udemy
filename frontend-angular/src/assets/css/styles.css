@@ -199,6 +199,20 @@ body {
     cursor: pointer;
 }
 
+.btn-error {
+    display: block;
+    background: rgb(148, 3, 3);
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-decoration: none;
+    transition: 300ms all;
+    border: none;
+    cursor: pointer;
+}
+
 .btn-success {
     background: rgb(72, 119, 3);
 }
