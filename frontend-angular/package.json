@@ -3,10 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --open",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "build:prod": "npm run lint && ng build --configuration production",
+    "build:produrl": "npm run lint && ng build --configuration production --base-href",
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
+    "test:cov": "ng test --no-watch --code-coverage --no-progress --browsers=ChromeHeadlessCI",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "clean": "rmdir /s /q node_modules",
+    "reinstall": "npm run clean && npm install",
+    "rebuild": "npm run clean && npm install && rmdir /s /q dist && npm run build --prod"
   },
   "private": true,
   "dependencies": {
