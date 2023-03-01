@@ -8,6 +8,7 @@ import { Pelicula } from 'src/app/models/pelicula';
 })
 export class PeliculasComponent implements OnInit {
   peliculas: Array<Pelicula> = [];
+  favorita!: Pelicula;
 
   constructor() {
     this.peliculas = [
@@ -18,6 +19,10 @@ export class PeliculasComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
   }
 
+  mostrarFavorito(event: any): void {
+    this.favorita = event.pelicula;
+  }
 }
