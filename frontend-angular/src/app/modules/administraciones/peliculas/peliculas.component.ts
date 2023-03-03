@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Pelicula } from 'src/app/models/pelicula';
+import { Pelicula } from '../pelicula/services/pelicula';
 
 @Component({
   selector: 'app-peliculas',
@@ -16,7 +16,7 @@ export class PeliculasComponent implements OnInit {
       new Pelicula('Black Panther :: Wakanda Forever', 2020, 'https://lumiere-a.akamaihd.net/v1/images/pp_disney_blackpanther_wakandaforever_1289_d3419b8f.jpeg'),
       new Pelicula('Ant Man y la Avispa :: Quantuman', 2023, 'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2023/01/17/16739776681372.jpg')
     ];
-   }
+  }
 
   ngOnInit(): void {
 

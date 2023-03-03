@@ -1,12 +1,12 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule, Route } from '@angular/router';
 
-import { InicioComponent } from './components/inicio/inicio.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { FormularioComponent } from './components/formulario/formulario.component';
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { PaginaComponent } from './components/pagina/pagina.component';
-import { PaginaErrorComponent } from './components/pagina-error/pagina-error.component';
+import { BlogComponent } from './modules/administraciones/blog/blog.component';
+import { FormularioComponent } from './modules/administraciones/formulario/formulario.component';
+import { PaginaComponent } from './modules/administraciones/pagina/pagina.component';
+import { PeliculasComponent } from './modules/administraciones/peliculas/peliculas.component';
+import { InicioComponent } from './modules/app/inicio/inicio.component';
+import { PaginaErrorComponent } from './modules/app/pagina-error/pagina-error.component';
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
