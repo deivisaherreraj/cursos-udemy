@@ -14,6 +14,7 @@ import { Global } from '../../../app-config/default';
 export class BlogComponent implements OnInit {
   articles: Article[] = [];
   url!: string;
+  
   constructor(
     private _articleService: ArticleService
   ) { 

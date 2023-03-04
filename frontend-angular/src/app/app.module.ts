@@ -16,9 +16,11 @@ import { PaginaComponent } from './modules/administraciones/pagina/pagina.compon
 import { PeliculaComponent } from './modules/administraciones/pelicula/pelicula.component';
 import { PeliculasComponent } from './modules/administraciones/peliculas/peliculas.component';
 import { InicioComponent } from './modules/app/inicio/inicio.component';
+import { ArticlesComponent } from './modules/administraciones/articles/articles.component';
 import { PaginaErrorComponent } from './modules/app/pagina-error/pagina-error.component';
 
 import { CustomPipePipe } from './app-core/pipe-transform/custom-pipe.pipe';
+import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { CustomPipePipe } from './app-core/pipe-transform/custom-pipe.pipe';
     PaginaErrorComponent,
     PeliculasComponent,
     PeliculaComponent,
+    ArticlesComponent,
 
     CustomPipePipe
   ],
@@ -41,7 +44,8 @@ import { CustomPipePipe } from './app-core/pipe-transform/custom-pipe.pipe';
     BrowserModule,
     Routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
   ],
   providers: [
     AppRoutingProviders
