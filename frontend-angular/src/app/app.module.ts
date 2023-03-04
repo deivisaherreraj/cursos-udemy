@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routing, AppRoutingProviders } from './app.routing';
+import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -37,7 +39,9 @@ import { CustomPipePipe } from './app-core/pipe-transform/custom-pipe.pipe';
   ],
   imports: [
     BrowserModule,
-    Routing
+    Routing,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     AppRoutingProviders

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from './services/user';
 
 @Component({
   selector: 'app-formulario',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
+  user!: User;
 
-  constructor() { }
+  constructor() {
+    this.user = {
+      nombres: '',
+      apellidos: '',
+      bio: '',
+      genero: '',
+    }
+  }
 
   ngOnInit(): void {
+
+  }
+
+  onSubmit(): void {
+    console.log(this.user);
   }
 
 }
