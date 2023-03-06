@@ -28,9 +28,9 @@
       </div>
 
       <div class="form-group radiobuttons">
-        <input type="radio" name="genero" value="hombre" #genero="ngModel" [(ngModel)]="user.genero" required /> Hombre
-        <input type="radio" name="genero" value="mujer" #genero="ngModel" [(ngModel)]="user.genero" /> Mujer
-        <input type="radio" name="genero" value="otro" #genero="ngModel" [(ngModel)]="user.genero" /> Otro
+        <input type="radio" aria-label="genero" name="genero" value="hombre" #genero="ngModel" [(ngModel)]="user.genero" required /> Hombre
+        <input type="radio" aria-label="genero" name="genero" value="mujer" #genero="ngModel" [(ngModel)]="user.genero" /> Mujer
+        <input type="radio" aria-label="genero" name="genero" value="otro" #genero="ngModel" [(ngModel)]="user.genero" /> Otro
         <small *ngIf="!genero.valid && genero.touched">
           El genero es requerido
         </small>

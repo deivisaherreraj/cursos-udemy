@@ -1,0 +1,12 @@
+{
+  "env": {
+    "name": "Deploy"
+  },
+  "pathFolderSite":"##{pathFolderSite}##",
+  "prod": "##{prod}##",
+  "baseAPI": "##{baseAPI}##",
+  "subscriptionKey": "##{subscriptionKey}##",
+  "appInsights": {
+    "instrumentationKey": "##{appInsights.instrumentationKey}##"
+  }
+}

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Global } from 'src/app/app-config/default';
-import { Article } from '../blog/services/article';
+import { Article } from './services/article';
 
 @Component({
   selector: 'app-articles',
@@ -16,6 +16,6 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
-
 }

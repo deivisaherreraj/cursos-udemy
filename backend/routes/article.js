@@ -14,6 +14,6 @@ router.get('/articles/:last?', articleController.listArticle);
 router.get('/article/:id', articleController.getArticle);
 router.post('/article/upload/:id', md_upload, articleController.uploadArticle);
 router.get('/article/imagen/:image', articleController.getImage);
-router.get('/article/search/imagen/:search', articleController.searchImage);
+router.get('/article/search/:search', articleController.searchArticle);
 
 module.exports =  router;

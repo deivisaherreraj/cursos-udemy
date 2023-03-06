@@ -216,7 +216,7 @@ var controller = {
             }
         });
     },
-    searchImage: (req, res) => {
+    searchArticle: (req, res) => {
         // Sacar el string a buscar
         var searchString = req.params.search;
         // Find or

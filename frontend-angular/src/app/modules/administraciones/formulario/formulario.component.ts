@@ -25,5 +25,4 @@ export class FormularioComponent implements OnInit {
   onSubmit(): void {
     console.log(this.user);
   }
-
 }

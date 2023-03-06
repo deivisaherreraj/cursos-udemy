@@ -229,6 +229,7 @@ body {
     transition: 300ms all;
     border: none;
     cursor: pointer;
+    text-align: center;
 }
 
 .btn-success {
@@ -237,6 +238,27 @@ body {
 
 .btn-success:hover {
     background: black;
+}
+
+.btn-warning {
+    background: rgb(249, 229, 7);
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background: rgb(248, 32, 4);
+    color: white !important;
+    text-decoration: none;
+}
+
+.btn-warning:hover, .btn-danger:hover {
+    transition: all 300ms;
+    opacity: 0.8;
+}
+
+.buttons {
+    margin-top: 30px;
 }
 
 .mid-form {
@@ -253,7 +275,7 @@ body {
     font-size: 17px;
 }
 
-input[type="text"], textarea {
+input[type="text"], input[type="file"], textarea {
     width: 100%;
     min-height: 30px;
     border: 1px solid #ccc;

@@ -7,11 +7,17 @@ import { PaginaComponent } from './modules/administraciones/pagina/pagina.compon
 import { PeliculasComponent } from './modules/administraciones/peliculas/peliculas.component';
 import { InicioComponent } from './modules/app/inicio/inicio.component';
 import { PaginaErrorComponent } from './modules/app/pagina-error/pagina-error.component';
+import { ArticleComponent } from './modules/administraciones/articles/modals/article.component';
+import { SearchComponent } from './modules/administraciones/search/search.component';
+import { ArticleCreateComponent } from './modules/administraciones/articles/modals/article-create.component';
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'blog/articulo/:id', component: ArticleComponent },
+  { path: 'blog/crear', component: ArticleCreateComponent },
+  { path: 'buscar/:search', component: SearchComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'peliculas', component: PeliculasComponent },
   { path: 'pagina', component: PaginaComponent },

@@ -1,0 +1,12 @@
+{
+  "env": {
+    "name": "Developer"
+  },
+  "pathFolderSite": "",
+  "prod": false,
+  "baseAPI": "http://localhost:3900/api/v1",
+  "subscriptionKey": "30462a9d27c6451e82eab03dcc422ca9",
+  "appInsights": {
+    "instrumentationKey": "76a69571-a11b-4481-8f62-1d20522437c8"
+  }
+}

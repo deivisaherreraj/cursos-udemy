@@ -1,11 +1,11 @@
 export interface Filters {
-  filters?: ItemsFilters[];
-  sorts?: ItemSort[];
+  filters: ItemsFilters[];
+  sorts: ItemSort[];
 }
 
 export interface ItemSort {
-  name?: string;
-  direction?: string;
+  name: string;
+  direction: string;
 }
 
 export interface ItemsFilters {

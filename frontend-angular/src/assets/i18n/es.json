@@ -1,0 +1,174 @@
+{
+  "Menu": {
+    "Inicio": "Inicio"
+  },
+  "TextosAplicacion": {
+    "PageTitle": "Bienvenido al Curso de Angular",
+    "Titulo": "Bienvenido al Curso de Angular",
+    "SubTituloName": "Aquí usted prodrá realizar gestión sobre Articulos, Peliculas y Blog",
+    "PageHomeTitle": "Ultimos articulos",
+    "FooterSideBar": "Grupo EPM © 2021",
+    "RegistrosMostrados": "Mostrados {{recordsFrom}} a {{recordsTo}} de <span class='badge badge-pill badge-success'>{{maxCount}}</span> registros encontrados.",
+    "TotalRegistrosPreTable": "<span>{{maxCount}}</span> registros encontrados",
+    "ListaResultados": "Lista de resultados",
+    "TableCaption": "Tabla de registros paginados de la entidad",
+    "Mostrar": "Mostrar:",
+    "Registros": "registros",
+    "Filtrar": "Buscar por:",
+    "TituloSidebar": "Puedes hacer esto",
+    "TextoCrearArticulo": "Crear artículo",
+    "TextoBusqueda": "Encuentra el artículo que buscas"
+  },
+  "Filtar": {
+    "Equals": "Igual a:",
+    "NotEquals": "No igual",
+    "Minor": "Menor a:",
+    "MinorEquals": "Menor o igual a:",
+    "Mayor": "Mayor a:",
+    "MayorEquals": "Mayor o igual a:",
+    "Like": "Que contenga:",
+    "NotLike": "Que no contenga:",
+    "StartsWith": "Que empiece:",
+    "NotStartsWith": "Que no empiece:",
+    "EndsWith": "Que termine:",
+    "NotEndsWith": "Que no termine:",
+    "Buttons": {
+      "Adicionar": "Adicionar filtro",
+      "Remover": "Eliminar filtro"
+    }
+  },
+  "Conditional": {
+    "And": "And",
+    "Or": "Or"
+  },
+  "Paginador": {
+    "Primero": "Ir al primero",
+    "Ultimo": "Ir al último",
+    "Anterior": "Anterior",
+    "Siguiente": "Siguiente"
+  },
+  "undefined": {
+    "Titulo": "404"
+  },
+  "Generic": {
+    "Buttons": {
+      "Actualizar": "Actualizar",
+      "Aplicar": "Aplicar",
+      "Crear": "Crear",
+      "Cancelar": "Cancelar",
+      "Cerrar": "Cerrar",
+      "Eliminar": "Eliminar",
+      "Ver": "Ver",
+      "Guardar": "Guardar",
+      "Buscador": "Buscador",
+      "Aceptar": "Aceptar",
+      "Regresar": "Regresar",
+      "Agregar": "Agregar"
+    },
+    "Messages": {
+      "NoResults": "No se encontraron registros para mostrar.",
+      "NoResultsFilters": "No se encontraron registros para los filtros ingresados.",
+      "NoColumnShow": "No hay columnas visibles para carga la información en la tabla."
+    },
+    "PageError": {
+      "TituloNoExiteMicro": "¡Uy! El Micro Front no encontrado, intete actualizar",
+      "NoExiteMicro": "Lo sentimos, quizas el micro front se encuentre en manteniemiento, se ha eliminado o se ha cambiado el nombre.",
+      "Titulo404": "¡Uy! Esta página no se pudo encontrar",
+      "Page404": "Lo sentimos, la página que está buscando no existe, se ha eliminado o se ha cambiado el nombre.",
+      "Titulo403": "No se encuentra autorizado.",
+      "Page403": "Lo sentimos, la página que está tratando de acceder requiere autorización.",
+      "Titulo401": "No se encuentra autenticado.",
+      "Page401": "Lo sentimos, la página que está tratando de acceder requiere autenticación."
+    },
+    "Placeholder": {
+      "Buscar": "Buscar"
+    },
+    "Labels": {
+      "TDAcciones": "Acciones",
+      "ModalConfigViewOcultar": "Ocultar columna",
+      "ModalConfigViewOcultarTodo": "Ocultar todas las columnas"
+    },
+    "ItemDefaultCombo": "Seleccionar un ítem",
+    "ItemDefaultSinDatos": "No hay ítems asociados",
+    "IrAlMenu": "Ir al menú",
+    "AbrirURL": "Abrir URL",
+    "CerrarSesion": "Cerrar sesión",
+    "SubTitulo": "Aplicación",
+    "TituloDiagnostico": "Diagnostico de cuentas"
+  },
+  "Messages": {
+    "Title": {
+      "GeneralConfirmUpdateApp": "Actualización de la aplicación disponible"
+    },
+    "error": {
+      "Title": {},
+      "ErrorGeneral": "Estamos Presentando dificultades tecnicas, por favor intenta nuevamente mas tarde.",
+      "ErrorNoControlado": "Actualmente se esta presentado un error general en la aplicación, por favor intenta nuevamente mas tarde, de persistir comunicarse con el administrador.",
+      "ErrNoEncontrado": "El registro {{param}} no existe."
+    },
+    "success": {
+      "Title": {
+        "TitleMsjCreacion": "Creado",
+        "TitleMsjEliminacion": "Eliminado",
+        "TitleMsjActualizacion": "Actualizado"
+      },
+      "MsjActualizacion": "El registro fue actualizado exitosamente.",
+      "MsjCreacion": "El registro fue creado exitosamente.",
+      "MsjEliminacion": "El registro fue eliminado exitosamente."
+    },
+    "warning": {
+      "Title": {},
+      "ErrorGeneral": "Estamos Presentando dificultades tecnicas, por favor intenta nuevamente mas tarde.",
+      "ErrNoEncontrado": "El registro no existe.",
+      "ErrRegistrosDependientes": "El registro no se puede eliminar porque tiene dependencias.",
+      "ErrUniqueKey": "Esta intentando grabar valores duplicados en campos de valores únicos, por favor corrija el problema y vuelva a intentarlo.",
+      "ErrRequiredField": "Algunos datos no han sido ingresados y son necesarios para completar la operación, por favor corrija el problema y vuelva a intentarlo.",
+      "ErrForeingkey": "No se puede eliminar el registro porque tiene asociación con otros maestros.",
+      "ErrMaxLength": "Existen datos demasiado extensos, por favor corrija el problema y vuelva a intentarlo.",
+      "ErrMaxValue": "Algunos datos que han sido ingresados infringen restricciones de la base de datos, por favor corrija el problema y vuelva a intentarlo.",
+      "ExistField": "Algunos datos que han sido ingresados  ya se encuentran registrados por favor corrija el problema y vuelva a intentarlo.",
+      "ErrNoDataExport": "No hay datos para generar el archivo de excel con la información.",
+      "ErrNoColumnExport": "No hay columnas configuradas para generar el archivo de excel con la información.",
+      "ErrUsuarioNoPoseePermisoMenuAutorizacion": "Para realizar modificaciones a los servicios de administración del componente debe solicitar permisos de administrador de la aplicación.  Póngase en contacto con el administrador del componente.",
+      "ErrForeingkeyFiliales": "No se puede eliminar el registro porque tiene asociación con aplicaciones y/o usuarios.",
+      "ErrNoDataImport": "No hay archivo cargado, por favor verfique."
+    },
+    "info": {
+      "InfoNoEncontraronRecursos": "No se encontraron recursos disponibles."
+    },
+    "GeneralConfirm": "Actualmente tiene información {{param}} sin guardar, ¿desea salir de este formulario?",
+    "GeneralConfirmIngresada": "ingresada",
+    "GeneralConfirmEditada": "editada",
+    "ConfirmarEliminacion": "¿Esta seguro que desea eliminar este registro?",
+    "DefaultSelectDate": "Ingrese fecha",
+    "GeneralConfirmUpdateApp": "Elija Aceptar para actualizar"
+  },
+  "Article": {
+    "Titulo": "Articulo",
+    "Labels": {
+      "id": "Id",
+      "title": "Titulo",
+      "content": "Contenido",
+      "image": "Imagen de articulo",
+      "date": "Fecha de registro"
+    },
+    "Placeholder": {
+      "title": "Ingrese el titulo",
+      "content": "Ingrese el contenido del articulo",
+      "image": "Ingrese la imagen",
+      "date": "Ingrese la fecha"
+    },
+    "Invalido": {
+      "title": "Campo requerido, por favor ingrese el titulo del articulo.",
+      "content": "Campo requerido, por favor ingrese el contenido.",
+      "image": "Campo requerido, por favor cargar la imagen.",
+      "date": "Campo requerido, por favor ingrese la fecha de creación."
+    },
+    "Valido": {
+      "title": "Titulo del articulo ingresado.",
+      "content": "Contenido del articulo ingresada",
+      "image": "La imagen ha sido cargada.",
+      "date": "Fecha de creación ingresada."
+    }
+  }
+}
