@@ -10,6 +10,7 @@ import { PaginaErrorComponent } from './modules/app/pagina-error/pagina-error.co
 import { ArticleComponent } from './modules/administraciones/articles/modals/article.component';
 import { SearchComponent } from './modules/administraciones/search/search.component';
 import { ArticleCreateComponent } from './modules/administraciones/articles/modals/article-create.component';
+import { ArticleUpdateComponent } from './modules/administraciones/articles/modals/article-update.component';
 
 const appRoutes: Routes = [
   { path: '', component: InicioComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'blog/articulo/:id', component: ArticleComponent },
   { path: 'blog/crear', component: ArticleCreateComponent },
+  { path: 'blog/editar/:id', component: ArticleUpdateComponent },
   { path: 'buscar/:search', component: SearchComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'peliculas', component: PeliculasComponent },

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Global } from 'src/app/app-config/default';
 import { Article } from '../services/article';
 import { ArticleService } from '../services/article.service';
+import Swal from 'sweetalert';
 
 @Component({
   selector: 'app-article',
@@ -35,5 +36,30 @@ export class ArticleComponent implements OnInit {
         this._router.navigate(['/inicio']);
       });
     });
+  }
+
+  deleteArticle(id: string): void {
+    Swal({
+      title: "¿Estas seguro?",
+      text: "Una vez eliminado, no podrá recuperar el registro!",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        this._articleService.deleteArticle(id).subscribe(response => {
+          Swal("Su articulo ha sido eliminado!", {
+            icon: response.status
+          });
+          this._router.navigate(['/blog']);
+        }, error => {
+          Swal("Error al eliminar!", {            
+            icon: error.status
+          });
+          this._router.navigate(['/blog']);  
+        });        
+      }
+    });    
   }
 }

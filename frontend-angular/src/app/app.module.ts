@@ -19,6 +19,7 @@ import { InicioComponent } from './modules/app/inicio/inicio.component';
 import { ArticlesComponent } from './modules/administraciones/articles/articles.component';
 import { ArticleComponent } from './modules/administraciones/articles/modals/article.component';
 import { ArticleCreateComponent } from './modules/administraciones/articles/modals/article-create.component';
+import { ArticleUpdateComponent } from './modules/administraciones/articles/modals/article-update.component';
 import { PaginaErrorComponent } from './modules/app/pagina-error/pagina-error.component';
 import { SearchComponent } from './modules/administraciones/search/search.component';
 
@@ -26,6 +27,7 @@ import { CustomPipePipe } from './app-core/pipe-transform/custom-pipe.pipe';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MomentModule } from 'ngx-moment';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 @NgModule({
   declarations: [
@@ -44,9 +46,10 @@ import { MomentModule } from 'ngx-moment';
     ArticlesComponent,
     ArticleComponent,
     ArticleCreateComponent,
+    ArticleUpdateComponent,
     SearchComponent,
 
-    CustomPipePipe    
+    CustomPipePipe          
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,7 @@ import { MomentModule } from 'ngx-moment';
     FormsModule,
     HttpClientModule,
     MomentModule,
-    HttpClientModule,
+    AngularFileUploaderModule,    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
