@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "clean": "rmdir /s /q node_modules",
-    "reinstall": "npm run clean && npm install",
+    "reinstall": "npm run clean && npm install --force",
     "rebuild": "npm run clean && npm install && rmdir /s /q dist && npm run build --prod"
   },
   "private": true,
@@ -30,6 +30,7 @@
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
     "angular-file-uploader": "^7.1.1",
+    "moment": "^2.29.4",
     "ngx-moment": "^6.0.2",
     "rxjs": "~7.5.0",
     "sweetalert": "^2.1.2",

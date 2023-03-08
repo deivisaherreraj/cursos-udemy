@@ -12,7 +12,7 @@
 
       <div class="form-group">
         <label for="content">Contenido</label>
-        <textarea name="content" id="content" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+        <textarea name="contents" id="contents" #content="ngModel" [(ngModel)]="article.content" required></textarea>
         <small *ngIf="!content.valid && content.touched">
           El contenido es requerida
         </small>
@@ -25,8 +25,7 @@
             alt="{{ article.title }}"
             onerror="this.onerror=null;this.src='assets/images/default.jpg'" />
         </div>
-        <angular-file-uploader [config]="afuConfigImage" (ApiResponse)="imgageUpload($event)">
-        </angular-file-uploader>
+        <angular-file-uploader [config]="afuConfigImage" (ApiResponse)="imgageUpload($event)"></angular-file-uploader>
       </div>
 
       <div class="clearfix"></div>

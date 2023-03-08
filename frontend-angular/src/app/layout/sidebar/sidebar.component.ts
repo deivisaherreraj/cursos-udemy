@@ -7,14 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  search!: string;
+  search: string = '';
 
   constructor(
     private _router: Router
   ) { }
 
   ngOnInit(): void {
-
+    
   }
 
   onSearch(): void {

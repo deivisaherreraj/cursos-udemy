@@ -16,7 +16,7 @@ export class PeliculaComponent implements OnInit {
 
   }
 
-  seleccionarPelicula(event: any, pelicula: Pelicula): void {
+  seleccionarPelicula(pelicula: Pelicula): void {
     this.eventFavorito.emit({
       pelicula: pelicula
     });

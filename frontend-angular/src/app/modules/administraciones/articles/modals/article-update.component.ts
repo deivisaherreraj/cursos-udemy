@@ -15,7 +15,7 @@ import Swal from 'sweetalert';
   ]
 })
 export class ArticleUpdateComponent implements OnInit {
-  article!: Article;
+  article: Article = new Article('', '', '');
   url!: string;
   idArticle!: string;
   afuConfigImage: any;
@@ -29,11 +29,11 @@ export class ArticleUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cargarConfiguraciones();
-    this.getArticle();
-    this._activeRoute.params.subscribe((params: Params) => {
+    this._activeRoute.params.subscribe((params: Params) => {      
       this.idArticle = params['id'];
     });
+    this.cargarConfiguraciones();
+    this.getArticle();    
   }
 
   /**
@@ -51,6 +51,7 @@ export class ArticleUpdateComponent implements OnInit {
         url: `${this.url}/article/upload`,
         method: 'POST'
       },
+      theme: 'attachPin',
       hideProgressBar: true,
       hideResetBtn: true,
       hideSelectBtn: false,
@@ -58,6 +59,7 @@ export class ArticleUpdateComponent implements OnInit {
         selectFileBtn: NamesIdentity.CargaArchivoImage,
         resetBtn: NamesIdentity.Reiniciar,
         uploadBtn: NamesIdentity.Cargar,
+        attachPinBtn: NamesIdentity.CargaArchivoImage,
         afterUploadMsg_success: NamesIdentity.CargaMensajeExitoso,
         afterUploadMsg_error: NamesIdentity.CargaMensajeError,
         sizeLimit: NamesIdentity.CargaLimitePeso
@@ -69,11 +71,11 @@ export class ArticleUpdateComponent implements OnInit {
    * Este método se utiliza para cargar los documentos para exportar
    * @returs {*} 
    * @membersof ArticleCreateComponent
-   * @param evento Object to return a value type any
+   * @param data Object to return a value type any
    * @author Deivis Andres Herrera Julio
    */
-  imgageUpload($event: any) {
-    let response = JSON.parse($event.response);
+  imgageUpload(data: any) {
+    let response = data.body;
     this.article.image = response.image;
   }
 

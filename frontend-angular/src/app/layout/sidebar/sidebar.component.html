@@ -7,7 +7,7 @@
         <h3>{{'Generic.Buttons.Buscador' | translate}}</h3>
         <p>{{'TextosAplicacion.TextoBusqueda' | translate}}</p>
         <form #searchForm="ngForm" (ngSubmit)="onSearch()">
-            <input type="text" name="search" aria-label="search" #search="ngModel" [(ngModel)]="search" />
+            <input type="text" name="search" id="search" aria-label="search" #searchFilter="ngModel" [(ngModel)]="search" />
             <input type="submit" name="submit" value="Buscar" class="btn" />
         </form>
     </div>

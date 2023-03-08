@@ -15,8 +15,8 @@ import Swal from 'sweetalert';
   ]
 })
 export class ArticleCreateComponent implements OnInit {
-  article!: Article;
-  url!: string;
+  article: Article = new Article('', '', '');
+  url: string = '';
   afuConfigImage: any;
 
   constructor(
@@ -45,6 +45,7 @@ export class ArticleCreateComponent implements OnInit {
         url: `${this.url}/article/upload`,
         method: 'POST'
       },
+      theme: 'attachPin',
       hideProgressBar: true,
       hideResetBtn: true,
       hideSelectBtn: false,
@@ -52,6 +53,7 @@ export class ArticleCreateComponent implements OnInit {
         selectFileBtn: NamesIdentity.CargaArchivoImage,
         resetBtn: NamesIdentity.Reiniciar,
         uploadBtn: NamesIdentity.Cargar,
+        attachPinBtn: NamesIdentity.CargaArchivoImage,
         afterUploadMsg_success: NamesIdentity.CargaMensajeExitoso,
         afterUploadMsg_error: NamesIdentity.CargaMensajeError,
         sizeLimit: NamesIdentity.CargaLimitePeso
@@ -63,11 +65,11 @@ export class ArticleCreateComponent implements OnInit {
    * Este método se utiliza para cargar los documentos para exportar
    * @returs {*} 
    * @membersof ArticleCreateComponent
-   * @param evento Object to return a value type any
+   * @param data Object to return a value type any
    * @author Deivis Andres Herrera Julio
    */
-  imgageUpload($event: any) {
-    let response = JSON.parse($event.response);
+  imgageUpload(data: any) {
+    let response = data.body;
     this.article.image = response.image;
   }
 
