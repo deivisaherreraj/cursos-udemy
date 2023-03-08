@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Global } from '../../../app-config/default';
 import { Article } from '../articles/services/article';
 import { ArticleService } from '../articles/services/article.service';
 

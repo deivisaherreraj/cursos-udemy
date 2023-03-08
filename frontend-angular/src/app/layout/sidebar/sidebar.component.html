@@ -3,7 +3,7 @@
         <h3>{{'TextosAplicacion.TituloSidebar' | translate}}</h3>
         <a [routerLink]="['/blog/crear']" class="btn btn-success">{{'TextosAplicacion.TextoCrearArticulo' | translate}}</a>
     </div>
-    <div id="search" class="sidebar-item">
+    <div id="search-item" class="sidebar-item">
         <h3>{{'Generic.Buttons.Buscador' | translate}}</h3>
         <p>{{'TextosAplicacion.TextoBusqueda' | translate}}</p>
         <form #searchForm="ngForm" (ngSubmit)="onSearch()">
