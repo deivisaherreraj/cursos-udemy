@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+
 import Pelicula from './modals/Pelicula';
+import Sidebar from './../../../layout/sidebar/Sidebar';
+import Slider from './../../../layout/slider/Slider';
 
 class Peliculas extends Component {
   state = {
@@ -19,22 +22,28 @@ class Peliculas extends Component {
 
   render() {
     return (
-      <section id="content">
-        <h2 className="subheader">Peliculas</h2>
-        {this.state.favorita &&
-          <p className="article-item-favorite">
-            <strong>Pelicula favorita: </strong>
-            <span>{this.state.favorita?.title}</span>
-          </p>
-        }
-        {
-          this.state.peliculas.map((pelicula, index) => {
-            return (
-              <Pelicula key={index} index={index} pelicula={pelicula} seleccionarPelicula={this.mostrarFavorito} />
-            )
-          })
-        }
-      </section >
+      <React.Fragment>
+        <Slider nombre="Peliculas" size="slider-small" />
+        <div className="center">
+          <section id="content">
+            <h2 className="subheader">Peliculas</h2>
+            {this.state.favorita &&
+              <p className="article-item-favorite">
+                <strong>Pelicula favorita: </strong>
+                <span>{this.state.favorita?.title}</span>
+              </p>
+            }
+            {
+              this.state.peliculas.map((pelicula, index) => {
+                return (
+                  <Pelicula key={index} index={index} pelicula={pelicula} seleccionarPelicula={this.mostrarFavorito} />
+                )
+              })
+            }
+          </section>
+          <Sidebar />
+        </div>
+      </React.Fragment>
     );
   }
 }

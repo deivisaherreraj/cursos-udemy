@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 import Header from './app/layout/header/Header';
 import Footer from './app/layout/footer/Footer';
@@ -10,6 +10,10 @@ import Pelicula from './app/modules/administraciones/peliculas/Peliculas';
 import Blog from './app/modules/administraciones/blog/Blog';
 import Formulario from './app/modules/administraciones/formulario/Formulario';
 import Pagina from './app/modules/administraciones/pagina/Pagina';
+import Article from './app/modules/administraciones/articles/modals/Article';
+import ArticleCreate from './app/modules/administraciones/articles/modals/ArticleCreate';
+import ArticleUpdate from './app/modules/administraciones/articles/modals/ArticleUpdate';
+import Search from './app/modules/administraciones/search/Search';
 
 class Routing extends Component {
   render() {
@@ -20,6 +24,11 @@ class Routing extends Component {
           <Route exact path='/' element={<Inicio />} />
           <Route exact path='/inicio' element={<Inicio />} />
           <Route exact path='/blog' element={<Blog />} />
+          <Route exact path='/blog/articulo/:id' element={<Article />} />
+          <Route exact path='/blog/buscar/:search' element={<Search />} />
+          <Route exact path='/blog/redirect/:search' render={ (props) => { return <Navigate to={ '/blog/buscar/' + props.match.params.search } /> } } />
+          <Route exact path='/blog/crear' element={<ArticleCreate />} />
+          <Route exact path='/blog/editar/:id' element={<ArticleUpdate />} />
           <Route exact path='/formulario' element={<Formulario />} />
           <Route exact path='/peliculas' element={<Pelicula />} />
           <Route exact path='/pagina' element={<Pagina />} />

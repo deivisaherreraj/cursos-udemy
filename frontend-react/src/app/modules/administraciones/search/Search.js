@@ -4,20 +4,21 @@ import Articles from '../articles/Articles';
 import Sidebar from './../../../layout/sidebar/Sidebar';
 import Slider from './../../../layout/slider/Slider';
 
-class Blog extends Component {
+class Search extends Component {
   render() {
+    let searched = this.props.match.params.search;
     return (
       <React.Fragment>
-        <Slider nombre="Blog" size="slider-small" />
+        <Slider nombre={"Busqueda: " + searched} size="slider-small" />
         <div className="center">
           <div id="content">
-            <Articles />
+            <Articles searchArticle={searched} />
           </div>
-          <Sidebar viewBlog="true" />
+          <Sidebar />
         </div>
       </React.Fragment>
     );
   }
 }
 
-export default Blog;
+export default Search;
