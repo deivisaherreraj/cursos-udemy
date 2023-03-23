@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Moment from 'react-moment';
 
+import withRouter from './../../../../../withRouter';
 import DefaultImage from './../../../../../assets/images/default.jpg';
 import Global from './../../../../app-config/Default';
 import Sidebar from './../../../../layout/sidebar/Sidebar';
@@ -10,27 +11,29 @@ import Slider from './../../../../layout/slider/Slider';
 
 class Article extends Component {
   state = {
-    article: {},
+    article: null,
     status: null
-  };
+  };  
   url = Global.url;
 
-  componentWillUnmount() {
+  constructor(props) {
+    super(props);    
     this.getArticleById();
   }
 
   getArticleById = () => {
-    let idArticle = this.props.match.params.id;
+    let idArticle = this.props.params.id;
     let urlArticle = this.url + '/article/' + idArticle;
+
     Axios.get(urlArticle).then(response => {
       this.setState({
-        article: response.article,
-        status: response.status
+        article: response.data.article,
+        status: response.data.status
       });
     }).catch(function (error) {
       this.setState({
         article: {},
-        status: error.status
+        status: error.data.status
       });
     });
   }
@@ -63,7 +66,8 @@ class Article extends Component {
                 <div className="buttons">
                   <Link to={'/blog/editar/' + article._id} className="btn btn-warning">Editar</Link>
                   <Link to={'#'} className="btn btn-danger">Borrar</Link>
-                </div >
+                </div>
+                <div className="clearfix"></div>
               </article>
             }
           </section>
@@ -74,4 +78,4 @@ class Article extends Component {
   }
 }
 
-export default Article;
+export default withRouter(Article);

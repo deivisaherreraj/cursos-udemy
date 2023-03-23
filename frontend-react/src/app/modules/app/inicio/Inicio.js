@@ -5,28 +5,7 @@ import Slider from './../../../layout/slider/Slider';
 
 import Articles from './../../administraciones/articles/Articles';
 
-class Inicio extends Component {
-  contador = 0;
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      contador: 0
-    };
-  }
-
-  Sumar = () => {
-    this.setState({
-      contador: (this.state.contador + 1)
-    });
-  }
-
-  Restar = () => {
-    this.setState({
-      contador: (this.state.contador - 1)
-    });
-  }
-
+class Inicio extends Component {  
   render() {
     return (
       <React.Fragment>

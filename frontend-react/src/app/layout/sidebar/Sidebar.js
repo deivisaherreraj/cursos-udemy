@@ -19,7 +19,7 @@ class Sidebar extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Navigate to={'/blog/redirect/' + this.state.search} />
+      return <Navigate to={'/blog/buscar/' + this.state.search} />
     }
     return (
       <aside id="sidebar">

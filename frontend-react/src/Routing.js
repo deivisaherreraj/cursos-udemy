@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Header from './app/layout/header/Header';
 import Footer from './app/layout/footer/Footer';
@@ -26,7 +26,6 @@ class Routing extends Component {
           <Route exact path='/blog' element={<Blog />} />
           <Route exact path='/blog/articulo/:id' element={<Article />} />
           <Route exact path='/blog/buscar/:search' element={<Search />} />
-          <Route exact path='/blog/redirect/:search' render={ (props) => { return <Navigate to={ '/blog/buscar/' + props.match.params.search } /> } } />
           <Route exact path='/blog/crear' element={<ArticleCreate />} />
           <Route exact path='/blog/editar/:id' element={<ArticleUpdate />} />
           <Route exact path='/formulario' element={<Formulario />} />
