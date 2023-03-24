@@ -84,7 +84,7 @@ export class ArticleCreateComponent implements OnInit {
       this._router.navigate(['/blog']);  
     }, error => {
       Swal({
-        title: "Error al actualizar!",
+        title: "Error al crear!",
         text: error.message,
         icon: error.status
       });

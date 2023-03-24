@@ -75,7 +75,7 @@ class ArticleCreate extends Component {
           status: error.data.status
         });
         Swal({
-          title: "Error al actualizar!",
+          title: "Error al crear!",
           text: error.data.message,
           icon: error.data.status
         });

@@ -7,14 +7,13 @@ import DefaultImage from './../../../../assets/images/default.jpg';
 import Global from './../../../app-config/Default';
 
 class Articles extends Component {
+  state = {
+    articles: [],
+    status: null
+  };
   url = Global.url;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      articles: [],
-      status: null
-    };
+  componentDidMount() {
     this.getArticles();
   }
 

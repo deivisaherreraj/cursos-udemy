@@ -349,6 +349,11 @@ textarea {
   padding: 10px;
 }
 
+.image-thumb img {
+  width: 150px;
+  margin-top: 10px;
+}
+
 /* RESPONSIVE */
 
 /*Desde la anchura 0px hasta la anchura 1320px de pantalla*/

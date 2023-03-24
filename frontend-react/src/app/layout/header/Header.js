@@ -18,19 +18,19 @@ class Header extends Component {
           <nav id="menu">
             <ul>
               <li>
-                <NavLink to="/inicio" activeClassName="active" >Inicio</NavLink>
+                <NavLink to="/inicio" className={({ isActive }) => isActive? "active": ''}>Inicio</NavLink>
               </li>
               <li>
-                <NavLink to="/blog" activeClassName="active">Blog</NavLink>
+                <NavLink to="/blog" className={({ isActive }) => isActive? "active": ''}>Blog</NavLink>
               </li>
               <li>
-                <NavLink to="/formulario" activeClassName="active">Formulario</NavLink>
+                <NavLink to="/formulario" className={({ isActive }) => isActive? "active": ''}>Formulario</NavLink>
               </li>
               <li>
-                <NavLink to="/peliculas" activeClassName="active">Peliculas</NavLink>
+                <NavLink to="/peliculas" className={({ isActive }) => isActive? "active": ''}>Peliculas</NavLink>
               </li>
               <li>
-                <NavLink to="/pagina" activeClassName="active">Pagina</NavLink>
+                <NavLink to="/pagina" className={({ isActive }) => isActive? "active": ''}>Pagina</NavLink>
               </li>
             </ul>
           </nav>

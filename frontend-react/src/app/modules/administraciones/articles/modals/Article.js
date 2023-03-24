@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import Axios from 'axios';
 import Moment from 'react-moment';
+import Swal from 'sweetalert';
 
 import withRouter from './../../../../../withRouter';
 import DefaultImage from './../../../../../assets/images/default.jpg';
@@ -16,8 +17,7 @@ class Article extends Component {
   };  
   url = Global.url;
 
-  constructor(props) {
-    super(props);    
+  componentDidMount() {
     this.getArticleById();
   }
 
@@ -38,8 +38,43 @@ class Article extends Component {
     });
   }
 
+  deleteArticle = (idArticle) => {
+    Swal({
+      title: "¿Estas seguro?",
+      text: "Una vez eliminado, no podrá recuperar el registro!",
+      icon: "warning",
+      buttons: [true, true],
+      dangerMode: true
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        let urlArticle = this.url + '/article/' + idArticle;
+        Axios.delete(urlArticle).then(response => {
+          this.setState({
+            article: response.data.article,
+            status: 'deleted'
+          });
+          Swal("Su articulo ha sido eliminado!", {
+            icon: response.data.status
+          });
+        }).catch(function (error) {
+          this.setState({
+            article: {},
+            status: error.data.status
+          });
+          Swal("Error al eliminar!", {            
+            icon: error.data.status
+          }); 
+        });        
+      }
+    });
+  }
+
   render() {
     let article = this.state.article;
+    if (this.state.status === 'deleted') {
+      return <Navigate to={'/blog'} />
+    }
     return (
       <React.Fragment>
         <Slider nombre="Articulo" size="slider-small" />
@@ -65,7 +100,7 @@ class Article extends Component {
                 </p>
                 <div className="buttons">
                   <Link to={'/blog/editar/' + article._id} className="btn btn-warning">Editar</Link>
-                  <Link to={'#'} className="btn btn-danger">Borrar</Link>
+                  <Link onClick={ () => { this.deleteArticle(article._id) } } className="btn btn-danger">Borrar</Link>
                 </div>
                 <div className="clearfix"></div>
               </article>
