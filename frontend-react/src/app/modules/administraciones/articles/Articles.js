@@ -13,30 +13,30 @@ class Articles extends Component {
   };
   url = Global.url;
 
+  componentDidMount() {
+    this.getArticles();
+  }
 
-  componentWillUnmount() {
+  getArticles = () => {
     let lastArticles = this.props.lastArticles;
-    let searchedArticle = this.props.searchArticle;
+    let searchedArticle = this.props.searchedArticle;
     let urlArticles = this.url + '/articles';
+
     if (lastArticles && !searchedArticle) {
       urlArticles += '/' + lastArticles;
     } else if (!lastArticles && searchedArticle) {
       urlArticles = this.url + '/article/search/' + searchedArticle;
     }
-    this.getArticles(urlArticles);
-  }
 
-  getArticles = (urlArticles) => {
     Axios.get(urlArticles).then(response => {
       this.setState({
-        articles: response.articles,
-        status: response.status
+        articles: response.data.articles,
+        status: response.data.status
       });
     }).catch(function (error) {
-      console.log(error);
       this.setState({
         articles: [],
-        status: error.status
+        status: error.data.status
       });
     });
   }
@@ -60,13 +60,16 @@ class Articles extends Component {
               <Moment locale='es' fromNow>{article.date}</Moment>
             </span>
             <Link to={'/blog/articulo/' + article._id}>Leer más</Link>
+            <div className="clearfix"></div>
           </article>
         );
       });
       return (
-        <div id="articles">
-          {listArticles}
-        </div>
+        <section id="content">
+          <div id="articles">
+            {listArticles}
+          </div>
+        </section>
       );
     } else {
       return (

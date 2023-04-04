@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Navigate } from 'react-router-dom';
 import Axios from 'axios';
+import SimpleReactValidator from 'simple-react-validator';
+import Swal from 'sweetalert';
 
 import Global from './../../../../app-config/Default';
 import Sidebar from './../../../../layout/sidebar/Sidebar';
@@ -16,6 +18,11 @@ class ArticleCreate extends Component {
   titleRef = React.createRef();
   contentsRef = React.createRef();
 
+  constructor(props) {
+    super(props);
+    this.validator = new SimpleReactValidator();
+  }
+
   changeState = () => {
     this.setState({
       article: {
@@ -27,35 +34,59 @@ class ArticleCreate extends Component {
 
   fileChange = (event) => {
     this.setState({
-      selectedFile: event.target.file[0]
+      selectedFile: event.target.files[0]
     })
   };
 
   formSubmit = (e) => {
     e.preventDefault();
-    let urlArticle = this.url + '/article';
-    Axios.post(urlArticle, this.state.article).then(response => {
-      this.setState({
-        article: response.data.article,
-        status: 'waiting'
-      });
-      let idArticle = response.article._id;
-      let formData = new FormData();
-      if (this.state.selectedFile !== null) {
-        formData.append('file0', this.state.selectedFile, this.state.selectedFile.name);
-        Axios.post('/article/upload/' + idArticle, formData).then(responseFile => {
-          this.setState({
-            article: responseFile.data.article,
-            status: responseFile.data.status
-          });
+    if (this.validator.allValid()) {
+      let urlArticle = this.url + '/article';
+      Axios.post(urlArticle, this.state.article).then(response => {
+        this.setState({
+          article: response.data.articleStored,
+          status: 'waiting'
         });
-      }      
-    }).catch(function (error) {
-      this.setState({
-        article: {},
-        status: error.status
+        if (this.state.selectedFile !== null) {
+          let idArticle = response.data.articleStored._id;
+          let formData = new FormData();
+          let urlImageArticle = this.url + '/article/upload/' + idArticle;
+
+          formData.append('file0', this.state.selectedFile, this.state.selectedFile.name);
+
+          Axios.post(urlImageArticle, formData).then(responseFile => {
+            this.setState({
+              article: responseFile.data.article,
+              status: responseFile.data.status
+            });
+          });
+        } else {
+          this.setState({
+            status: response.data.status
+          });
+        }
+        Swal({
+          title: "Articulo creado!",
+          text: "El articulo se ha creado correctamente!",
+          icon: response.data.status
+        });
+      }).catch(function (error) {
+        this.setState({
+          status: error.data.status
+        });
+        Swal({
+          title: "Error al crear!",
+          text: error.data.message,
+          icon: error.data.status
+        });
       });
-    });
+    } else {
+      this.setState({
+        status: 'faild'
+      });
+      this.validator.showMessages();
+      this.forceUpdate();
+    }
   };
 
   render() {
@@ -71,21 +102,17 @@ class ArticleCreate extends Component {
               <div className="form-group">
                 <label htmlFor="title">Titulo</label>
                 <input type="text" name="title" id="title" ref={this.titleRef} onChange={this.changeState} required />
-                <small>
-                  El titulo es requerido
-                </small>
+                {this.validator.message('title', this.state.article.title, 'required|min:5|max:50')}
               </div>
 
               <div className="form-group">
                 <label htmlFor="contents">Contenido</label>
                 <textarea name="contents" id="contents" ref={this.contentsRef} onChange={this.changeState} required></textarea>
-                <small>
-                  El contenido es requerida
-                </small>
+                {this.validator.message('contents', this.state.article.content, 'required|min:10|max:150')}
               </div>
 
               <div className="form-group">
-                <input type="file" name="file0" id="imagen" accept=".jpg, .jpeg, .png" aria-label="file0" onChange={this.fileChange} />                
+                <input type="file" name="file0" id="imagen" accept=".jpg, .jpeg, .png" aria-label="file0" onChange={this.fileChange} />
               </div>
 
               <div className="clearfix"></div>
