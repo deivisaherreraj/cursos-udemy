@@ -13,19 +13,19 @@
       <nav id="menu">
         <ul>
           <li>
-            <a href="index.html">Inicio</a>
+            <RouterLink to="/inicio" active-class="active">Inicio</RouterLink>
           </li>
           <li>
-            <a href="blog.html">Blog</a>
+            <RouterLink to="/blog" active-class="active">Blog</RouterLink>
           </li>
           <li>
-            <a href="form.html">Formulario</a>
+            <RouterLink to="/formulario" active-class="active">Formulario</RouterLink>
           </li>
           <li>
-            <a href="#">Pagina 1</a>
+            <RouterLink to="/peliculas" active-class="active">Peliculas</RouterLink>
           </li>
           <li>
-            <a href="#">Pagina 2</a>
+            <RouterLink :to="{ path: 'pagina', name: 'PaginaComponent', params: { id: 'Soy el valor desde un parametro' } }" active-class="active">Pagina</RouterLink>
           </li>
         </ul>
       </nav>

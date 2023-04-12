@@ -46,12 +46,15 @@ body {
     0% {
         transform: scale(1, 1);
     }
+
     50% {
         transform: scale(1.02, 1.02);
     }
+
     55% {
         transform: scale(0.95, 0.95);
     }
+
     100% {
         transform: scale(1, 1);
     }
@@ -89,30 +92,31 @@ body {
     transition: 300ms all;
 }
 
-#menu a:hover {
-    color: #f11919;
+#menu a:hover,
+.active {
+    color: #08bf17 !important;
 }
 
 #slider {
-    width: 100%;    
+    width: 100%;
     height: 350px;
     /* line-height: 320px; */
     color: white;
     text-shadow: 0px 0px 5px #444;
 
     /* DEGRADADO CSSS */
-    background: rgba(164,179,87,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(7,179,21,1) 68%, rgba(7,179,21,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(164,179,87,1)), color-stop(68%, rgba(7,179,21,1)), color-stop(100%, rgba(7,179,21,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(7,179,21,1) 68%, rgba(7,179,21,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(7,179,21,1) 68%, rgba(7,179,21,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(164,179,87,1) 0%, rgba(7,179,21,1) 68%, rgba(7,179,21,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(164,179,87,1) 0%, rgba(7,179,21,1) 68%, rgba(7,179,21,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#07b315', GradientType=1 );
+    background: rgba(164, 179, 87, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(164, 179, 87, 1) 0%, rgba(7, 179, 21, 1) 68%, rgba(7, 179, 21, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(164, 179, 87, 1)), color-stop(68%, rgba(7, 179, 21, 1)), color-stop(100%, rgba(7, 179, 21, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(164, 179, 87, 1) 0%, rgba(7, 179, 21, 1) 68%, rgba(7, 179, 21, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(164, 179, 87, 1) 0%, rgba(7, 179, 21, 1) 68%, rgba(7, 179, 21, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(164, 179, 87, 1) 0%, rgba(7, 179, 21, 1) 68%, rgba(7, 179, 21, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(164, 179, 87, 1) 0%, rgba(7, 179, 21, 1) 68%, rgba(7, 179, 21, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a4b357', endColorstr='#07b315', GradientType=1);
 }
 
 #slider h1 {
-    margin-top:  0.2px;
+    margin-top: 0.2px;
     padding: 0px;
     padding-top: 135px;
     text-align: center;
@@ -146,8 +150,8 @@ body {
     height: 150px;
 }
 
-#slider.slider-small  h1 {
-    margin-top:  0.2px;
+#slider.slider-small h1 {
+    margin-top: 0.2px;
     padding: 0px;
     padding-top: 50px;
 }
@@ -167,7 +171,7 @@ body {
 .sidebar-item {
     background: #f7f7f7;
     padding: 20px;
-    margin-top: 30px;    
+    margin-top: 30px;
 }
 
 .sidebar-item h3 {
@@ -181,7 +185,7 @@ body {
 
 .sidebar-item .btn {
     margin: 0px auto;
-    margin-top: 10px;    
+    margin-top: 10px;
 }
 
 .btn {
@@ -221,7 +225,8 @@ body {
     font-size: 17px;
 }
 
-input[type="text"], textarea {
+input[type="text"],
+textarea {
     width: 100%;
     min-height: 30px;
     border: 1px solid #ccc;
@@ -230,7 +235,8 @@ input[type="text"], textarea {
     transition: 300ms all;
 }
 
-input[type="text"]:focus, textarea:focus {
+input[type="text"]:focus,
+textarea:focus {
     box-shadow: 0px 0px 5px #444 inset;
 }
 
@@ -280,7 +286,7 @@ textarea {
 }
 
 .article-item .image-wrap img {
-    height: 100%;
+    height: 150%;
     text-align: center;
 }
 
@@ -318,10 +324,10 @@ textarea {
 .article-detail .image-wrap {
     float: none;
     width: 100%;
-    height: 300px;    
+    height: 300px;
 }
 
-.article-detail .image-wrap img {    
+.article-detail .image-wrap img {
     width: 100%;
     height: auto;
 }
@@ -329,7 +335,46 @@ textarea {
 .article-detail .subheader {
     margin-top: 15px;
     margin-bottom: 0px;
-    border: none;    
+    border: none;
+}
+
+.alert-danger-temporary {
+    color: red;
+    font-weight: bold;
+}
+
+.alert-success-temporary {
+    color: green;
+    font-weight: bold;
+}
+
+.alert-warning-temporary {
+    color: orange;
+    font-weight: bold;
+}
+
+.article-item-favorite {
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.year-green {
+    display: block;
+    background: green;
+    color: white;
+    padding: 5px;
+    width: 121px;
+    text-align: center;
+}
+
+.year-red {
+    display: block;
+    background: red;
+    color: white;
+    padding: 5px;
+    width: 121px;
+    text-align: center;
 }
 
 /* RESPONSIVE */
@@ -357,7 +402,7 @@ textarea {
         width: 265px;
     }
 
-    #menu {        
+    #menu {
         width: auto;
     }
 }
@@ -369,7 +414,8 @@ textarea {
         margin-top: 20px;
     }
 
-    #menu, #menu ul {
+    #menu,
+    #menu ul {
         clear: both;
         float: none;
         width: 100%;
@@ -405,12 +451,13 @@ textarea {
         min-height: 130px;
         overflow: hidden;
     }
-    
-    #menu, #menu ul {        
+
+    #menu,
+    #menu ul {
         line-height: 50px;
     }
 
-    #menu ul li {        
+    #menu ul li {
         margin-left: 7px;
         margin-right: 7px;
     }
@@ -424,7 +471,7 @@ textarea {
         padding-top: 30px;
     }
 
-    #sidebar .btn-white {        
+    #sidebar .btn-white {
         padding-top: 20px;
     }
 
