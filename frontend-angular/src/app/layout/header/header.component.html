@@ -3,28 +3,33 @@
         <!-- LOGO -->
         <div id="logo">
             <img src="./assets/images/angular.svg" class="app-logo" alt="Logotipo" />
-            <span id="brand">
-                <strong>Curso</strong>Angular
-            </span>
+            <span id="brand" [ngxSummernoteView]="'TextosAplicacion.TotalRegistrosPreTable' | translate"></span>
+        </div>
+
+        <div>
+            <select id="langSelect" name="langSelect" aria-label="langSelect" #langSelect (change)="useLanguage(langSelect.value)">
+                <option value="es">Español</option>
+                <option value="en">Ingles</option>
+            </select>
         </div>
 
         <!-- MENU -->
         <nav id="menu">
             <ul>
                 <li>
-                    <a [routerLink]="['/inicio']" [routerLinkActive]="['active']">Inicio</a>
+                    <a [routerLink]="['/inicio']" [routerLinkActive]="['active']">{{ 'Menu.Inicio' | translate }}</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/blog']" [routerLinkActive]="['active']">Blog</a>
+                    <a [routerLink]="['/blog']" [routerLinkActive]="['active']">{{ 'Menu.Blog' | translate }}</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/formulario']" [routerLinkActive]="['active']">Formulario</a>
+                    <a [routerLink]="['/formulario']" [routerLinkActive]="['active']">{{ 'Menu.Formulario' | translate }}</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/peliculas']" [routerLinkActive]="['active']">Peliculas</a>
+                    <a [routerLink]="['/peliculas']" [routerLinkActive]="['active']">{{ 'Menu.Peliculas' | translate }}</a>
                 </li>
                 <li>
-                    <a [routerLink]="['/pagina']" [routerLinkActive]="['active']">Página</a>
+                    <a [routerLink]="['/pagina']" [routerLinkActive]="['active']">{{ 'Menu.Pagina' | translate }}</a>
                 </li>
             </ul>
         </nav>

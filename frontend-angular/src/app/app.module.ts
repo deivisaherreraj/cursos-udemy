@@ -28,6 +28,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MomentModule } from 'ngx-moment';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { NgxSummernoteModule } from 'ngx-summernote';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
   declarations: [
@@ -57,14 +59,16 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     FormsModule,
     HttpClientModule,
     MomentModule,
-    AngularFileUploaderModule,    
+    AngularFileUploaderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
         deps: [HttpClient],
       },
-    })
+    }),
+    NgxSummernoteModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [
     AppRoutingProviders

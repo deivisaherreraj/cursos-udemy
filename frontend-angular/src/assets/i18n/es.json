@@ -1,13 +1,17 @@
 {
   "Menu": {
-    "Inicio": "Inicio"
+    "Inicio": "Inicio",
+    "Blog": "Blog",
+    "Formulario": "Formulario",
+    "Peliculas": "Películas",
+    "Pagina": "Página"
   },
   "TextosAplicacion": {
     "PageTitle": "Bienvenido al Curso de Angular",
-    "Titulo": "Bienvenido al Curso de Angular",
-    "SubTituloName": "Aquí usted prodrá realizar gestión sobre Articulos, Peliculas y Blog",
-    "PageHomeTitle": "Ultimos articulos",
-    "FooterSideBar": "Grupo EPM © 2021",
+    "Titulo": "Bienvenido al <strong>Curso</strong> de Angular",
+    "SubTituloName": "Aquí usted podrá realizar gestión sobre Articulos, Peliculas y Blog",
+    "PageHomeTitle": "Últimos artículos",
+    "FooterSideBar": "Máster en framework en Angular © 2021",
     "RegistrosMostrados": "Mostrados {{recordsFrom}} a {{recordsTo}} de <span class='badge badge-pill badge-success'>{{maxCount}}</span> registros encontrados.",
     "TotalRegistrosPreTable": "<span>{{maxCount}}</span> registros encontrados",
     "ListaResultados": "Lista de resultados",
