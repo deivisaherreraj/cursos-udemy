@@ -1,12 +1,12 @@
 <template>
   <div class="general">
-    <SliderComponent :isViewButton="false" :defaultText="'Blog'" :size="'small'"></SliderComponent>
+    <SliderComponent :isViewButton="false" :defaultText="'Busqueda: ' + searched" :size="'small'"></SliderComponent>
     <div class="center">
       <section id="content">
-        <h2 class="subheader">Blog</h2>
+        <h2 class="subheader">Artículos encontrados</h2>
         <ArticlesComponent :articles="articles"></ArticlesComponent>
         <div v-if="articles.length <= 0">
-          No hay articulos registrados en el sistema.
+          No hay resultados de la busqueda para los articulos registrados en el sistema.
         </div>
       </section>
       <SidebarComponent></SidebarComponent>
@@ -23,30 +23,32 @@ import SidebarComponent from './../../../layout/sidebar/SidebarComponent.vue';
 import ArticlesComponent from './../articles/ArticlesComponent.vue';
 
 export default {
-  name: 'BlogComponent',
+  name: 'SearchComponent',
   components: {
     SliderComponent,
     SidebarComponent,
     ArticlesComponent
   },
   mounted() {
-    this.getArticles();
+    this.searched = this.$route.params.search;
+    this.getArticlesBySearch();
   },
   data() {
     return {
       url: Global.url,
+      searched: null,
       status: null,
       articles: []
-    };
+    }
   },
   methods: {
-    getArticles() {
-      let urlArticles = this.url + '/articles';
+    getArticlesBySearch() {
+      let urlArticles = this.url + '/article/search/' + this.searched;
       Axios.get(urlArticles).then(response => {
         this.articles = response.data.articles;
       }).catch(function (error) {
-        console.log(error);
         this.articles = [];
+        this.status = error.data.status;
       });
     }
   }

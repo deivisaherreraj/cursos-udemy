@@ -2,14 +2,14 @@
   <aside id="sidebar">
     <div id="nav-blog" class="sidebar-item">
       <h3>Puedes hacer esto</h3>
-      <a href="#" class="btn btn-success">Crear artículo</a>
+      <RouterLink to="/blog/crear" class="btn btn-success">Crear artículo</RouterLink>
     </div>
 
     <div id="search" class="sidebar-item">
       <h3>Buscador</h3>
       <p>Encuentra el artículo que buscas</p>
-      <form>
-        <input type="text" name="search" aria-label="search" />
+      <form @submit.prevent="submitToSearch()">
+        <input type="text" name="search" aria-label="search" v-model="search" />
         <input type="submit" name="submit" value="Buscar" class="btn" />
       </form>
     </div>
@@ -18,6 +18,16 @@
 
 <script>
 export default {
-  name: 'SidebarComponent'
+  name: 'SidebarComponent',
+  data() {
+    return {
+      search: null
+    }
+  },
+  methods: {
+    submitToSearch() {
+      this.$router.push('/redirect/' + this.search);
+    }
+  }
 }
 </script>

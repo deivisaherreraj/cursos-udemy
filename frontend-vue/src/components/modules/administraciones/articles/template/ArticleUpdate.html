@@ -1,0 +1,38 @@
+<div class="general">
+  <div class="center">
+    <section id="content">
+      <h1 class="subheader">Editar artículo</h1>
+      <form class="mid-form" @submit.prevent="formSubmit()">
+        <div class="form-group">
+          <label for="title">Titulo</label>
+          <input type="text" name="title" id="title" v-model="article.title" required />
+          <div v-for="(error, index) of v$.article.title.$errors" :key="index">
+            <small>{{ error.$message }}</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="contents">Contenido</label>
+          <textarea name="contents" id="contents" v-model="article.content" required></textarea>
+          <div v-for="(error, index) of v$.article.content.$errors" :key="index">
+            <small>{{ error.$message }}</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="image-thumb">
+            <img v-if="article.image" :src="url + '/article/imagen/' + article.image" :alt="article.title" title="Imagen" />
+            <img v-if="!article.image" src="./../../../../../assets/images/default.jpg" alt="Image Default" />
+          </div>
+          <input type="file" name="file0" id="imagen" ref="file" accept=".jpg, .jpeg, .png" aria-label="file0"
+            @change="fileChange()" />
+        </div>
+
+        <div class="clearfix"></div>
+        <input type="submit" value="Actualizar" class="btn btn-success" />
+      </form>
+    </section>
+    <SidebarComponent></SidebarComponent>
+    <div class="clearfix"></div>
+  </div>
+</div>

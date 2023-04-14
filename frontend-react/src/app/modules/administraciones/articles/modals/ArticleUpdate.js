@@ -150,7 +150,7 @@ class ArticleUpdate extends Component {
               </div>
 
               <div className="clearfix"></div>
-              <input type="submit" value="Crear" className="btn btn-success" />
+              <input type="submit" value="Actualizar" className="btn btn-success" />
             </form>
           </section>
           <Sidebar />

@@ -7,14 +7,15 @@
       </div>
       <h2>{{ article.title }}</h2>
       <span class="date">
-        {{ article.date }}
+        {{ dateTime(article.date) }}
       </span>
-      <RouterLink to="/blog/articulo">Leer más</RouterLink>
+      <RouterLink :to="{ path: 'blog/articulo', name: 'ArticleComponent', params: { id: article._id } }">Leer más</RouterLink>
       <div class="clearfix"></div>
     </article>
-  </div>
+  </div>  
 </template>
 <script>
+import Moment from 'moment';
 import Global from './../../../app-config/Default';
 
 export default {
@@ -23,6 +24,11 @@ export default {
     articles: {
       type: Object
     }
+  },
+  computed: {
+    dateTime(value) {
+      return Moment(value, "YYYYMMDD").fromNow();
+    },
   },
   data() {
     return {

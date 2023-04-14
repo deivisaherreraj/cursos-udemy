@@ -10,7 +10,7 @@
         <form class="mid-form" @submit.prevent="formSubmit()">
           <div class="form-group">
             <label for="nombres">Nombres</label>
-            <input type="text" name="nombres" id="nombres" v-model="user.nombres">
+            <input type="text" name="nombres" id="nombres" v-model="user.nombres" required>
             <div v-for="(error, index) of v$.user.nombres.$errors" :key="index">
               <small>{{ error.$message }}</small>
             </div>
@@ -18,7 +18,7 @@
 
           <div class="form-group">
             <label for="apellidos">Apellidos</label>
-            <input type="text" name="apellidos" id="apellidos" v-model="user.apellidos">
+            <input type="text" name="apellidos" id="apellidos" v-model="user.apellidos" required>
             <div v-for="(error, index) of v$.user.apellidos.$errors" :key="index">
               <small>{{ error.$message }}</small>
             </div>
@@ -26,7 +26,7 @@
 
           <div class="form-group">
             <label for="bio">Biografia</label>
-            <textarea name="bio" id="bio" v-model="user.bio"></textarea>
+            <textarea name="bio" id="bio" v-model="user.bio" required></textarea>
             <div v-for="(error, index) of v$.user.bio.$errors" :key="index">
               <small>{{ error.$message }}</small>
             </div>
@@ -51,7 +51,7 @@
   </div>
 </template>
 <script>
-import useValidate from '@vuelidate/core'
+import useVuelidate from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 
 import SliderComponent from './../../../layout/slider/SliderComponent.vue';
@@ -75,7 +75,7 @@ export default {
   },
   data() {
     return {
-      v$: useValidate(),
+      v$: useVuelidate(),
       user: {
         nombres: '',
         apellidos: '',

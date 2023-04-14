@@ -8,19 +8,25 @@ import BlogComponent from './components/modules/administraciones/blog/BlogCompon
 import FormularioComponent from './components/modules/administraciones/formulario/FormularioComponent.vue';
 import PeliculasComponent from './components/modules/administraciones/peliculas/PeliculasComponent.vue';
 import PaginaComponent from './components/modules/administraciones/pagina/PaginaComponent.vue';
+import SearchComponent from './components/modules/administraciones/search/SearchComponent.vue';
+import RedirectComponent from './components/modules/administraciones/search/modals/RedirectComponent.vue';
+import ArticleComponent from './components/modules/administraciones/articles/modals/ArticleComponent.vue';
+import ArticleCreate from './components/modules/administraciones/articles/modals/ArticleCreate.vue';
+import ArticleUpdate from './components/modules/administraciones/articles/modals/ArticleUpdate.vue';
 
 const routers = [  
   { path: '/inicio', name: 'InicioComponent', component: InicioComponent },
   { path: '/blog', name: 'BlogComponent', component: BlogComponent },
+  { path: '/blog/articulo/:id', name: 'ArticleComponent', component: ArticleComponent },
+  { path: '/blog/crear', name: 'ArticleCreate', component: ArticleCreate },
+  { path: '/blog/editar/:id', name: 'ArticleUpdate', component: ArticleUpdate },  
   { path: '/formulario', name: 'FormularioComponent', component: FormularioComponent },
   { path: '/peliculas', name: 'PeliculasComponent', component: PeliculasComponent },
   { path: '/pagina/:id?', name: 'PaginaComponent', component: PaginaComponent },
+  { path: '/buscar/:search', name: 'SearchComponent', component: SearchComponent },
+  { path: '/redirect/:search', name: 'RedirectComponent', component: RedirectComponent },
   { path: '/', name: 'DefaultComponent', component: InicioComponent },
-  { path: '/:catchAll(.*)', name: "ErrorComponent", component: ErrorComponent }
-  // { path: '/blog/articulo/:id', component: ArticleComponent },
-  // { path: '/blog/crear', component: ArticleCreateComponent },
-  // { path: '/blog/editar/:id', component: ArticleUpdateComponent },
-  // { path: '/buscar/:search', component: SearchComponent },
+  { path: '/:catchAll(.*)', name: "ErrorComponent", component: ErrorComponent }  
 ];
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),

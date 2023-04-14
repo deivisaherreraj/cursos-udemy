@@ -5,21 +5,7 @@
       <section id="content">
         <h2 class="subheader">{{ paragraph }}</h2>
         <!-- Listado de articulos -->
-        <div id="articles">
-          <article class="article-item" id="article-template">
-            <div class="image-wrap">
-              <img
-                src="https://kaikucaffelatte.com/blog/wp-content/uploads/2020/03/shutterstock_510679489-scaled-e1648037045335.jpg"
-                alt="Paisaje" />
-            </div>
-            <h2>Articulo de prueba</h2>
-            <span class="date">
-              Hace 5 minutos
-            </span>
-            <a href="#">Leer más</a>
-            <div class="clearfix"></div>
-          </article>
-        </div>
+        <ArticlesComponent :articles="articles"></ArticlesComponent>
       </section>
       <SidebarComponent></SidebarComponent>
       <div class="clearfix"></div>
@@ -28,18 +14,41 @@
 </template>
 
 <script>
+import Axios from 'axios';
+import Global from './../../../app-config/Default';
+
 import SliderComponent from './../../../layout/slider/SliderComponent.vue';
 import SidebarComponent from './../../../layout/sidebar/SidebarComponent.vue';
+
+import ArticlesComponent from './../../administraciones/articles/ArticlesComponent.vue';
 
 export default {
   name: 'InicioComponent',
   components: {
     SliderComponent,
-    SidebarComponent
+    SidebarComponent,
+    ArticlesComponent
+  },
+  mounted() {
+    this.getArticles();
   },
   data() {
     return {
-      paragraph: 'Últimos artículos'
+      paragraph: 'Últimos artículos',
+      url: Global.url,
+      status: null,
+      articles: []
+    }
+  },
+  methods: {
+    getArticles() {      
+      let urlArticles = this.url + '/articles/true';      
+      Axios.get(urlArticles).then(response => {
+        this.articles = response.data.articles;
+      }).catch(function (error) {
+        console.log(error);
+        this.articles = [];
+      });
     }
   }
 }
