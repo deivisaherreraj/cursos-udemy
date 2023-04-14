@@ -1,9 +1,8 @@
 <template>
   <div class="general">
-    <SliderComponent :isViewButton="false" :defaultText="'Blog'" :size="'small'"></SliderComponent>
+    <SliderComponent :isViewButton="false" :defaultText="'Artículos'" :size="'small'"></SliderComponent>
     <div class="center">
       <section id="content">
-        <h2 class="subheader">Blog</h2>
         <ArticlesComponent :articles="articles"></ArticlesComponent>
         <div v-if="articles.length <= 0">
           No hay articulos registrados en el sistema.
@@ -44,8 +43,7 @@ export default {
       let urlArticles = this.url + '/articles';
       Axios.get(urlArticles).then(response => {
         this.articles = response.data.articles;
-      }).catch(function (error) {
-        console.log(error);
+      }).catch(function () {
         this.articles = [];
       });
     }

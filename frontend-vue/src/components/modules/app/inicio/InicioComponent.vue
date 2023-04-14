@@ -44,9 +44,8 @@ export default {
     getArticles() {      
       let urlArticles = this.url + '/articles/true';      
       Axios.get(urlArticles).then(response => {
-        this.articles = response.data.articles;
-      }).catch(function (error) {
-        console.log(error);
+        this.articles = response.data.articles;        
+      }).catch(function () {
         this.articles = [];
       });
     }

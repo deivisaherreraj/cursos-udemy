@@ -24,16 +24,16 @@ export default {
     articles: {
       type: Object
     }
-  },
-  computed: {
-    dateTime(value) {
-      return Moment(value, "YYYYMMDD").fromNow();
-    },
-  },
+  },  
   data() {
     return {
       url: Global.url
     };
+  },
+  methods: {
+    dateTime(value) {      
+      return Moment(value, "YYYYMMDD").fromNow();
+    }
   }
 }
 </script>

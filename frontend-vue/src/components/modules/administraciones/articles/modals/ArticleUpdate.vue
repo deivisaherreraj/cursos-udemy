@@ -25,7 +25,6 @@ export default {
   },
   validations() {
     return {
-      idArticle: null,
       article: {
         title: { required },
         content: { required }
@@ -35,6 +34,7 @@ export default {
   data() {
     return {
       url: Global.url,
+      idArticle: null,
       article: new ArticleModel('', '', null, null),
       file: null
     };

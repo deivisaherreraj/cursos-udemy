@@ -15,9 +15,8 @@
             {{ article.content }}
           </p>
           <div class="buttons">
-            <RouterLink :to="{ path: 'blog/editar', name: 'ArticleUpdate', params: { id: article._id } }"
-              class="btn btn-warning">Editar</RouterLink>
-            <button @click="deleteArticle()" class="btn btn-danger">Borrar</button>
+            <a @click="redirectUpdateArticle()" class="btn btn-warning">Editar</a>
+            <a @click="deleteArticle()" class="btn btn-danger">Borrar</a>
           </div>
           <div class="clearfix"></div>
         </article>
@@ -44,11 +43,6 @@ export default {
     this.idArticle = this.$route.params.id;
     this.getArticleById();
   },
-  computed: {
-    dateTime(value) {
-      return Moment(value, "YYYYMMDD").fromNow();
-    },
-  },
   data() {
     return {
       url: Global.url,
@@ -61,7 +55,7 @@ export default {
       let urlArticle = this.url + '/article/' + this.idArticle;
       Axios.get(urlArticle).then(response => {
         this.article = response.data.article;
-      }).catch(function (error) {
+      }).catch(function() {
         this.article = {};
       });
     },
@@ -89,6 +83,12 @@ export default {
           });
         }
       });
+    },
+    dateTime(value) {      
+      return Moment(value, "YYYYMMDD").fromNow();
+    },
+    redirectUpdateArticle() {
+      this.$router.push('/blog/editar/' + this.idArticle);
     }
   }
 }
