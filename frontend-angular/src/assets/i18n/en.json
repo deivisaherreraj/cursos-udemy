@@ -1,0 +1,26 @@
+{
+  "Menu": {
+    "Inicio": "Home",
+    "Blog": "Blog",
+    "Formulario": "Form",
+    "Peliculas": "Films",
+    "Pagina": "Page"
+  },
+  "TextosAplicacion": {
+    "PageTitle": "Welcome to the Angular Course",
+    "Titulo": "Welcome to the Angular <strong>Course</strong>",
+    "SubTituloName": "Here you can manage Articles, Movies and Blog",
+    "PageHomeTitle": "Latest articles",
+    "FooterSideBar": "Master in framework in Angular © 2023",
+    "RegistrosMostrados": "Shown {{records From}} to {{recordsTo}} of <span class='badge badge-pill badge-success'>{{maxCount}}</span> records found.",
+    "TotalRegistrosPreTable": "<span>{{maxCount}}</span> records found",
+    "ListaResultados": "Results list",
+    "TableCaption": "Entity paginated records table",
+    "Mostrar": "Show:",
+    "Registros": "Records",
+    "Filtrar": "To look for:",
+    "TituloSidebar": "You can do this",
+    "TextoCrearArticulo": "Create article",
+    "TextoBusqueda": "Find the item you are looking for"
+  }
+}
