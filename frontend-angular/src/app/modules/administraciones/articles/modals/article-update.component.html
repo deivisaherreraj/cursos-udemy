@@ -1,0 +1,37 @@
+<div class="center">
+  <section id="content">
+    <h1 class="subheader">Editar artículo</h1>
+    <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <input type="text" name="title" id="title" #title="ngModel" [(ngModel)]="article.title" required>
+        <small *ngIf="!title.valid && title.touched">
+          El titulo es requerido
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="content">Contenido</label>
+        <textarea name="contents" id="contents" #content="ngModel" [(ngModel)]="article.content" required></textarea>
+        <small *ngIf="!content.valid && content.touched">
+          El contenido es requerida
+        </small>
+      </div>
+
+      <div class="form-group">
+        <div class="image-thumb">
+          <img
+            src="{{ url + '/article/imagen/' + article.image }}"
+            alt="{{ article.title }}"
+            onerror="this.onerror=null;this.src='assets/images/default.jpg'" />
+        </div>
+        <angular-file-uploader [config]="afuConfigImage" (ApiResponse)="imgageUpload($event)"></angular-file-uploader>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <input type="submit" value="Crear" class="btn btn-success" [disabled]="articleForm.invalid" />
+    </form>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

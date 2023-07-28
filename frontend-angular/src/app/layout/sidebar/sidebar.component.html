@@ -1,0 +1,15 @@
+<aside id="sidebar">
+    <div id="nav-blog" class="sidebar-item">
+        <h3>{{'TextosAplicacion.TituloSidebar' | translate}}</h3>
+        <a [routerLink]="['/blog/crear']" class="btn btn-success">{{'TextosAplicacion.TextoCrearArticulo' | translate}}</a>
+    </div>
+    <div id="search-item" class="sidebar-item">
+        <h3>{{'Generic.Buttons.Buscador' | translate}}</h3>
+        <p>{{'TextosAplicacion.TextoBusqueda' | translate}}</p>
+        <form #searchForm="ngForm" (ngSubmit)="onSearch()">
+            <input type="text" name="search" id="search" aria-label="search" #searchFilter="ngModel" [(ngModel)]="search" />
+            <input type="submit" name="submit" value="Buscar" class="btn" />
+        </form>
+    </div>
+</aside>
+<div class="clearfix"></div>
